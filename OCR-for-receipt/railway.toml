@@ -1,0 +1,13 @@
+[build]
+builder = "DOCKERFILE"
+
+[deploy]
+startCommand = "python start.py"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+
+[env]
+FLASK_ENV = "production"
+PYTHONUNBUFFERED = "1"
+TESSDATA_PREFIX = "/usr/share/tesseract-ocr/5/tessdata"
